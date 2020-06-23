@@ -7,18 +7,18 @@ typedef struct student{
 }S;
 
 int main(){
-	S s[5]; //¿©·¯°³ÀÇ ±¸Á¶Ã¼¸¦ ÇÑ°Å¹ø¿¡ »ı¼º °¡´É
+	S s[5];  //ì—¬ëŸ¬ê°œì˜ êµ¬ì¡°ì²´ë¥¼ í•œê±°ë²ˆì— ìƒì„± ê°€ëŠ¥
 	for(int i = 0; i < 5; i++){
-		printf("ÀÌ¸§: ");
+		printf("ì´ë¦„: ");
 		scanf("%s", &s[i].name);
-		printf("Á¡¼ö1: ");
+		printf("ì ìˆ˜1: ");
 		scanf("%d", &s[i].score1);
-		printf("Á¡¼ö2: ");
+		printf("ì ìˆ˜2: ");
 		scanf("%d", &s[i].score2);
 	}	
 	
 	for(int i = 0; i < 5; i++){
-		printf("ÀÌ¸§: %s, Á¡¼ö1: %d, Á¡¼ö2: %d\n", s[i].name, s[i].score1, s[i].score2);
+		printf("ì´ë¦„: %s, ì ìˆ˜1: %d, ì ìˆ˜2: %d\n", s[i].name, s[i].score1, s[i].score2);
 	}
 	return 0;
 }
