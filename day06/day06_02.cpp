@@ -1,19 +1,19 @@
 /*
  
-STACK ¿¬½À ¹®Á¦
+STACK ì—°ìŠµ ë¬¸ì œ
 
-¿¹½Ã:
+ì˜ˆì‹œ:
 push 1
 pop
-[1 µ¥ÀÌÅÍ°¡ pop()µÊ]
+[1 ë°ì´í„°ê°€ pop()ë¨]
 push 2
 push 3
 top
-[3 µ¥ÀÌÅÍ°¡ top() µÊ]
+[3 ë°ì´í„°ê°€ top() ë¨]
 size
-[ÇöÀç size() : 2]
+[í˜„ì¬ size() : 2]
 Q
-[Á¾·á] 
+[ì¢…ë£Œ] 
 */
 
 #include <stdio.h>
@@ -64,28 +64,33 @@ int main(){
 				continue;
 			}
 			push(data);
-		} else if (!strcmp(str, "pop")){
+		} 
+		else if (!strcmp(str, "pop")){
 			if(isEmpty()) {
 				printf("EMPTY\n");
 				continue;
 			}
 			
-			printf("[%d µ¥ÀÌÅÍ°¡ pop() µÊ]\n", pop());
+			printf("[%d ë°ì´í„°ê°€ pop() ë¨]\n", pop());
 			
-		} else if (!strcmp(str, "top")){
+		} 
+		else if (!strcmp(str, "top")){
 			if(isEmpty()) {
 				printf("EMPTY\n");
 				continue;
 			}
 			
-			printf("[%d µ¥ÀÌÅÍ°¡ top() µÊ]\n", top());
-		} else if (!strcmp(str, "size")){
-			printf("[µ¥ÀÌÅÍÀÇ °³¼ö: %d]\n", size());
-		} else if (!strcmp(str, "Q")){
-			printf("ÇÁ·Î±×·¥ Á¾·á.\n");
+			printf("[%d ë°ì´í„°ê°€ top() ë¨]\n", top());
+		} 
+		else if (!strcmp(str, "size")){
+			printf("[ë°ì´í„°ì˜ ê°œìˆ˜: %d]\n", size());
+		} 
+		else if (!strcmp(str, "Q")){
+			printf("í”„ë¡œê·¸ë¨ ì¢…ë£Œ.\n");
 			return 0;
-		} else{
-			printf("Àß¸ø ÀÔ·Â. \n");
+		} 
+		else{
+			printf("ì˜ëª» ì…ë ¥. \n");
 		}
 		
 	}
