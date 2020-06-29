@@ -1,0 +1,100 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 5
+int queue[MAX];
+int s=0; //front
+int e=0; // end/ rear
+int isFull(){
+	if(s==e && queue[s]!=0){ // °¡µæÂü 
+		return 1;
+	} else {
+		return 0;
+	}
+}
+int isEmpty(){
+	if(s==e && queue[s]==0){ // ÅÖºö 
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+void Enqueue(int data) {
+	queue[e++]=data;
+	if(e==MAX){
+		e=0;
+	}
+}
+
+void Dequeue(){
+	printf("Dequeue(): %d \n", queue[s]);
+	queue[s++]=0; // °¡µæÃ¡´ÂÁö ÅÖºñ¾ú´ÂÁö È®ÀÎÇÏ±â À§ÇÔ
+	if(s==MAX){
+		s=0;
+	}
+}
+
+int size(){
+	if(isEmpty()){
+		return 0;
+	} else if(isFull()){
+		return MAX;
+	} else {
+		if (e-s < 0){
+			return e-s+MAX;
+		} else {
+			return e-s;
+		}
+	}
+}
+
+void show(){
+	int index=s;
+	for(int i = 0; i < size(); i++){
+		printf("%d ",queue[index++]);
+		if(index==MAX){
+			index=0;
+		}
+	}
+}
+
+int main() {
+	
+	for (int i = 0; i < MAX; i++){
+		queue[i] = 0;
+	}
+	int act;
+	while(1){
+		printf("1.Enqueue() 2.Dequeue 3.size() 4.show() 5.Á¾·á\n ");
+		scanf("%d",&act);
+		if (act==5) break;		
+		switch(act){
+		case 1:
+			if(isFull()){
+				printf("°¡µæÂü\n");
+				continue;
+			}
+			printf("Á¤¼öÀÔ·Â: ");
+			int data;
+			scanf("%d",&data);
+			Enqueue(data);
+			break;				
+		case 2:
+			if(isEmpty()){
+				printf("ÅÖºö\n");
+				continue;
+			}
+			Dequeue();
+			break;
+		case 3:
+			printf("size(): %d\n",size());
+			
+			break;
+		case 4:
+			printf("show(): ");
+			show();
+		}
+	}
+	
+	return 0;
+}
